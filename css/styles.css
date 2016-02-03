@@ -8,7 +8,7 @@ body {
 }
 
 .module-container {
-    margin: 40px auto;
+    margin: 200px auto;
     clear: both;
 }
     .module-container  h2 {
@@ -117,18 +117,114 @@ body {
 /* *** */
 
 /* Circle Graph */
-    .progress-meter .background {
-      fill: #ccc;
+.circle-graph-container {
+    position: relative;
+    display: block;
+    height: 181px;
+    width: 181px;
+    margin: 0 auto;
+}
+.circle-graph-container:before{
+    content: '';
+    display: block;
+    height: 181px;
+    width: 181px;
+    position: absolute;
+    background-color: #faefd6;
+    border-radius: 100px;
+    z-index: -1;
+}
+    .chart {
+      position: absolute;
+      display: inline-block;
+      text-align: center;
+      display: block;
+    }
+    .chart canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .chart-men {
+        left: 26px;
+        top: 26px;
+    }
+    .chart .key {
+        border-bottom: 2px solid #4866a8;
+        position: absolute;
+        width: 245px;
+        z-index: 11;
+    }
+    .chart .key p {
+      font-size: 17px;
+      color: #696969;
+      font-family: "FreigSanProLight", Arial,  sans-serif;
+      margin: 2px 0px;
+
+    }
+    .chart-women .key {
+        text-align: left;
+        left: -142px;
+        top: -60px;
+        padding-left: 3px;
+    }
+    .chart-women .key:before {
+        content: '';
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        -moz-border-radius: 7px;
+        -webkit-border-radius: 7px;
+        border-radius: 7px;
+        background-color: #4866a8;
+        position: absolute;
+        bottom: -4px;
+        left: -6px;
+    }
+    .chart-men .key {
+        text-align: right;
+        left: 110px;
+        top: 20px;
+        width: 220px;
+        padding-right: 3px;
+    }
+    .chart-men .key:after {
+        content: '';
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        -moz-border-radius: 7px;
+        -webkit-border-radius: 7px;
+        border-radius: 7px;
+        background-color: #4866a8;
+        position: absolute;
+        bottom: -4px;
+        right: -6px;
+    }
+    .percent {
+      display: inline-block;
+      line-height: 40px;
+      z-index: 2;
+      font-family: "FreigSanProBold", Arial,  sans-serif;
+      color: #4866a8;
+      font-size: 50px;
+    }
+    .percent:after {
+      content: '%';
+      margin-left: 0.1em;
+      font-size: 20px;
+      font-family: "FreigSanProLight", Arial,  sans-serif;
     }
 
-    .progress-meter .foreground {
-      fill: #000;
-    }
-
-    .progress-meter text {
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-size: 24px;
-      font-weight: bold;
+    .fb-icon {
+        background: url('../images/facebook-icon.png') center center no-repeat;
+        width: 95px;
+        height: 95px;
+        background-size: contain;
+        position: absolute;
+        z-index: 10;
+        top: 43px;
+        left: 43px;
     }
 
 /* *** */
