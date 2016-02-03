@@ -18,7 +18,7 @@ $( document ).ready(function() {
 
     function formCircles() {
         $('.chart-men').easyPieChart({
-            easing: 'easeIn',
+            easing: 'easeOut',
             delay: 2000,
             barColor: '#2cbdcb',
             trackColor: '#d6eff3',
@@ -27,6 +27,7 @@ $( document ).ready(function() {
             lineWidth: 17,
             trackWidth: 17,
             lineCap: 'butt',
+            animate: 2000,
             onStep: function(from, to, percent) {
                 $(this.el).find('.percent').text(Math.round(percent));
             }
@@ -34,7 +35,7 @@ $( document ).ready(function() {
         
         setTimeout(function(){
             $('.chart-women').easyPieChart({
-                easing: 'easeIn',
+                easing: 'easeOut',
                 delay: 2000,
                 barColor: '#f5bc1c',
                 trackColor: '#faefd6',
@@ -43,6 +44,7 @@ $( document ).ready(function() {
                 lineWidth: 27,
                 trackWidth: 27,
                 lineCap: 'butt',
+                animate: 2000,
                 onStep: function(from, to, percent) {
                     $(this.el).find('.percent').text(Math.round(percent));
                 }

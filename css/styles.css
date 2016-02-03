@@ -314,9 +314,9 @@ body {
         bottom: 35px;
         left: 8px;
         height: 0;
-        -webkit-transition: height .5s ease-out;
-        -moz-transition: height .5s ease-out;
-        transition: height .5s ease-out;
+        -webkit-transition: height 1.5s ease-out;
+        -moz-transition: height 1.5s ease-out;
+        transition: height 1.5s ease-out;
     }
     .phone-container .phone-fill.fill {
         height: 47%;
