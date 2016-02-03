@@ -1,8 +1,9 @@
 $( document ).ready(function() {
-    console.log('doc ready');
+    // console.log('doc ready');
 
-    var checkboxFill = $('.checkbox-fill');
-    var time = 300;
+    var checkboxFill = $('.checkbox-percentage');
+    var values = [48, 24, 22];
+    var time = 400;
     var mapdialog = $('.map-dialog');
     var phonefill = $('.phone-fill');
 
@@ -10,8 +11,26 @@ $( document ).ready(function() {
     function fillCheckboxes() {
         checkboxFill.each(function(index){
             var delayTime = time*index;
-            //console.log(delayTime);
-            $(this).delay( delayTime ).queue(function() { $(this).addClass('fill').dequeue(); });
+            $(this).delay( delayTime ).queue(function() { 
+                $('.checkbox-fill', this).addClass('fill').dequeue(); 
+
+                var $el = $('.percentage .num', this),
+                    value = values[index];
+
+                $({percentage: 0}).stop(true).animate({percentage: value}, {
+                    duration : 500,
+                    easing: "easeOutQuad",
+                    step: function () {
+                        // percentage with 1 decimal;
+                        var percentageVal = Math.round(this.percentage * 1) / 1;
+                        $el.text(percentageVal + '%');
+                    }
+                }).promise().done(function () {
+                    // hard set the value after animation is done to be
+                    // sure the value is correct
+                    $el.text(value + "%");
+                });
+            });
         });
     }
 
