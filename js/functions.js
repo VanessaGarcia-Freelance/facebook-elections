@@ -23,12 +23,12 @@ $( document ).ready(function() {
                     step: function () {
                         // percentage with 1 decimal;
                         var percentageVal = Math.round(this.percentage * 1) / 1;
-                        $el.text(percentageVal + '%');
+                        $el.text(percentageVal);
                     }
                 }).promise().done(function () {
                     // hard set the value after animation is done to be
                     // sure the value is correct
-                    $el.text(value + "%");
+                    $el.text(value);
                 });
             });
         });
