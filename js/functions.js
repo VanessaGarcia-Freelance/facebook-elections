@@ -3,7 +3,7 @@ $( document ).ready(function() {
 
     var checkboxFill = $('.checkbox-percentage');
     var values = [48, 24, 22];
-    var time = 400;
+    var time = 800;
     var mapdialog = $('.map-dialog');
     var phonefill = $('.phone-fill');
 
